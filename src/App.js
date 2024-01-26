@@ -40,7 +40,9 @@ function App() {
   }
 
   //Add Task
-
+  const AddTask = (task) => {
+    console.log(task);
+  }
   return (
     <div className='container'>
       <Header />
