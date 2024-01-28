@@ -4,21 +4,21 @@ const AddTask = ({onAdd}) => {
     //state variables
     const [text, setText] = useState('')
     const [day, setDay] = useState('')
-    const [reminder, setreminder] = useState(false)
+    const [reminder, setReminder] = useState(false)
 
-    const onSubmit = () => {
+    const onSubmit = (e) => {
         e.preventDefault()
 
         if(!text){
-            alert("please add text")
+            alert('please add text')
             return
-        }
+         }
         onAdd({text, day, reminder})
 
         //clear the form
         setText('')
         setDay('')
-        setreminder(false)
+        setReminder(false)
     }
 
   return (
@@ -43,7 +43,7 @@ const AddTask = ({onAdd}) => {
         <input type='checkbox'
         checked = {reminder}
         value = {reminder}
-        onChange = {(e) => setreminder(e.currentTarget.checked)}
+        onChange = {(e) => setReminder(e.currentTarget.checked)}
         />
       </div>
       <input type='submit' value='Save Task' className='btn btn-block'/>
